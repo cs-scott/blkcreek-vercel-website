@@ -20,8 +20,9 @@ jobs:
 
       - name: Build Kotlin JS
         run: |
-          mkdir dist
-          cp -r build/distributions/*dist/
+            ./gradlew jsBrowserProductionWebpack
+            mkdir dist
+         cp -r build/js/packages/blkcreek-vercel-website/kotlin/* dist/
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
