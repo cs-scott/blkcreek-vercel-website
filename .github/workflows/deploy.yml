@@ -19,9 +19,9 @@ jobs:
         uses: gradle/gradle-build-actions@v2
       - name: Build Kotlin JS
         run: |
-            ./gradlew jsBrowserProductionWebpack
-            mkdir dist
-         cp -r build/js/packages/blkcreek-vercel-website/kotlin/* dist/
+          ./gradlew jsBrowserProductionWebpack
+          mkdir dist
+          cp -r build/js/packages/blkcreek-vercel-website/kotlin/* dist/
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
