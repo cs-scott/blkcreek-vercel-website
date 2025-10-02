@@ -17,7 +17,6 @@ jobs:
 
       - name: Set up Gradle
         uses: gradle/gradle-build-actions@v2
-
       - name: Build Kotlin JS
         run: |
             ./gradlew jsBrowserProductionWebpack
