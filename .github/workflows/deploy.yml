@@ -19,11 +19,13 @@ jobs:
         uses: gradle/gradle-build-actions@v2
       - name: Build Kotlin JS
         run: |
-          ./gradlew jsBrowserDistribution
+          ./gradlew clean jsBrowserDistribution
+          mkdir -p dist
           cp -r build/dist .dist/
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
+          vercel-args: '--prod'
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
