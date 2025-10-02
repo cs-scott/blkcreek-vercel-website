@@ -25,7 +25,7 @@ fun main() {
             Section(attrs = { id("projects") }) {
                 H2 { Text("Projects") }
                 Ul {
-                    Li { Text("🔍 EVM Smart Contract Verifier") }
+                    Li { Text("🔍 EVM Smart Contract Verifier oh my") }
                     Li { Text("🧠 AI-Powered Natural Language Summaries") }
                     Li { Text("🛠️ Kotlin Multiplatform DApps") }
                 }
