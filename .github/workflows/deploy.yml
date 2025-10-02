@@ -8,7 +8,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - use: actions/checkount@v3
+      - uses: actions/checkout@v3
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
@@ -17,9 +17,11 @@ jobs:
 
       - name: Set up Gradle
         uses: gradle/gradle-build-actions@v2
+
       - name: Build Kotlin JS
         run: |
-          ./gradlew clean jsBrowserDistribution
+          ./gradlew clean jsBrowserProductionExecutableDistribute
+      - name: Move output to dist
           mkdir -p dist
           cp -r build/dist .dist/
       - name: Deploy to Vercel
