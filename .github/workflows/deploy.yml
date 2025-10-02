@@ -21,9 +21,12 @@ jobs:
       - name: Build Kotlin JS
         run: |
           ./gradlew clean jsBrowserProductionExecutableDistribute
+
       - name: Move output to dist
+        run: |
           mkdir -p dist
           cp -r build/dist .dist/
+
       - name: Deploy to Vercel
         uses: amondnet/vercel-action@v25
         with:
