@@ -21,15 +21,16 @@ repositories {
 kotlin {
     js(IR) {
         browser {
-           commonWebpackConfig(Action {
-               outputFileName = "output.js"
-               cssSupport{
-                   enabled = true
-               }
-           })
+            @Suppress("DEPRECATION")
+            commonWebpackConfig() {
+                outputFileName = "output.js"
+                cssSupport() {
+                    enabled = true
+            }
         }
-        binaries.executable()
+            binaries.executable()
     }
+
     sourceSets {
         val jsMain by getting {
             dependencies {
@@ -39,9 +40,10 @@ kotlin {
         }
         val jsTest by getting {
             dependencies {
-                implementation(kotlin("test"))
+                implementation(kotlin("test-js"))
             }
         }
     }
+}
 }
 
