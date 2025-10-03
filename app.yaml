@@ -6,12 +6,12 @@ handlers:
     static_files: build/dist/js/productionExecutable/index.html
     upload: build/dist/js/productionExecutable/index.html
 
-  # Serve all static assets (e.g. output.js, CSS, images)
-  - url: /(.*)
+  # Serve all static assets (JS, CSS, images, etc.)
+  - url: /(.*\.(js|css|png|jpg|jpeg|gif|svg|ico|map|woff2?|ttf|eot))
     static_files: build/dist/js/productionExecutable/\1
     upload: build/dist/js/productionExecutable/(.*)
 
-  # Catch-all handler for SPA routing (optional but useful)
+  # Catch-all: redirect all unknown routes to index.html for SPA client-side routing
   - url: /.*
     static_files: build/dist/js/productionExecutable/index.html
     upload: build/dist/js/productionExecutable/index.html
