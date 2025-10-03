@@ -1,10 +1,17 @@
-runtime: python39
+runtime: python39  # Using python39 just to use App Engine Standard, no actual Python code needed
 
 handlers:
+  # Serve index.html at root
   - url: /
     static_files: build/dist/js/productionExecutable/index.html
     upload: build/dist/js/productionExecutable/index.html
 
+  # Serve all static assets (e.g. output.js, CSS, images)
   - url: /(.*)
     static_files: build/dist/js/productionExecutable/\1
     upload: build/dist/js/productionExecutable/(.*)
+
+  # Catch-all handler for SPA routing (optional but useful)
+  - url: /.*
+    static_files: build/dist/js/productionExecutable/index.html
+    upload: build/dist/js/productionExecutable/index.html
