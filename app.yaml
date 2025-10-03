@@ -1,0 +1,10 @@
+runtime: python39
+
+handlers:
+  - url: /
+    static_files: build/dist/js/productionExecutable/index.html
+    upload: build/dist/js/productionExecutable/index.html
+
+  - url: /(.*)
+    static_files: build/dist/js/productionExecutable/\1
+    upload: build/dist/js/productionExecutable/(.*)

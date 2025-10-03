@@ -1,0 +1,4 @@
+# Keep this to ignore all but these folders:
+!.gitignore
+!app.yaml
+!build/dist/js/productionExecutable/**
